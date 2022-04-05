@@ -1,4 +1,5 @@
 from urllib import parse
+import certifi
 
 from kivymd.uix.dialog import MDInputDialog
 from kivy.network.urlrequest import UrlRequest
@@ -22,7 +23,7 @@ class SearchPopupMenu(MDInputDialog):
 
         email = 'gina524286@gmail.com'
         url = f'https://nominatim.openstreetmap.org/search/{parse.quote(address)}?format=json&email={email}'
-        UrlRequest(url, on_success=self.success, on_failure=self.failure, on_error=self.error)
+        UrlRequest(url, on_success=self.success, on_failure=self.failure, on_error=self.error, ca_file=certifi.where)
 
     @staticmethod
     def success(urlrequest, result):
