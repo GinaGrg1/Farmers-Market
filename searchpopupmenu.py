@@ -20,7 +20,7 @@ class SearchPopupMenu(MDInputDialog):
 
     def geocode_get_lan_lon(self, address):
 
-        email = 'example@gmail.com'
+        email = 'gina524286@gmail.com'
         url = f'https://nominatim.openstreetmap.org/search/{parse.quote(address)}?format=json&email={email}'
         UrlRequest(url, on_success=self.success, on_failure=self.failure, on_error=self.error)
 
