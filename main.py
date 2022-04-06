@@ -12,6 +12,7 @@ class MainApp(MDApp):
     search_menu = None
 
     def on_start(self):
+        self.theme_cls.primary_palette = 'Gray'
         self.connection = sqlite3.connect("markets.db")
         self.cursor = self.connection.cursor()
 
